@@ -126,13 +126,11 @@
                 echo "</br>Ingram Micro New Zealand RED Team</br></br>";
                 
                 echo "<table style='width:700px;border:1pt solid black;padding: 5px;background-color:#808080;'>";
-                echo "<div style='color:brown;'>";
                 echo "<tr style='background-color:lightgray;'>";
-                echo "<th style='width:150px;border:1pt solid black;background-color:lavender;'>First Name</th>";
-                echo "<th style='width:150px;border:1pt solid black;background-color:lavender;'>Surname</th>";
-                echo "<th style='width:350px;border:1pt solid black;background-color:lavender;'>Role</th>";
+                echo "<th style='width:150px;border:1pt solid black;background-color:lightgray;color:brown;'>First Name</th>";
+                echo "<th style='width:150px;border:1pt solid black;background-color:lightgray;color:brown;'>Surname</th>";
+                echo "<th style='width:350px;border:1pt solid black;background-color:lightgray;color:brown;'>Role</th>";
                 echo "</tr>";
-                echo "</div>";
 
                 $member = mysqli_query($db_conn, "SELECT firstname, surname, role FROM member;");
                 while ($member_row = mysqli_fetch_assoc($member)){
