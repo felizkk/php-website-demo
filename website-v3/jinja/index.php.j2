@@ -97,7 +97,7 @@
             <td>
                 <div style="color:grey;text-align:center;font-weight:bold;" class="arial_20">
                     Ingram Micro New Zealand is delighted to provide</br> 
-                    Ansible Workshops to your company.</br>
+                    Ansible Workshops to your company</br>
                     </br>
                     Contact us now!</br>
                     </br>
@@ -107,8 +107,6 @@
             </td>
         </tr>
         </table>
-
-        </br>
 
         <?php
             $db_host    = "{{ dbserver_host }}";
@@ -125,14 +123,16 @@
                 echo "<tr>";
                 echo "<td>";
                 echo "<div class='arial_20' style='width:100%;text-align:left;font-weight:bold;color:#ff0000;'>";
-                echo "</br>Ingram Micro NZ RED Team</br></br>";
-
+                echo "</br>Ingram Micro New Zealand RED Team</br></br>";
+                
                 echo "<table style='width:700px;border:1pt solid black;padding: 5px;background-color:#808080;'>";
+                echo "<div style='color:brown;'>";
                 echo "<tr style='background-color:lightgray;'>";
                 echo "<th style='width:150px;border:1pt solid black;background-color:lavender;'>First Name</th>";
                 echo "<th style='width:150px;border:1pt solid black;background-color:lavender;'>Surname</th>";
                 echo "<th style='width:350px;border:1pt solid black;background-color:lavender;'>Role</th>";
                 echo "</tr>";
+                echo "</div>";
 
                 $member = mysqli_query($db_conn, "SELECT firstname, surname, role FROM member;");
                 while ($member_row = mysqli_fetch_assoc($member)){
