@@ -1,0 +1,169 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ansible: Automation for Everyone</title>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<table style="width:100%;text-align:center;">
+<tr>
+    <td style="width:10%;">&nbsp;</td>
+    <td style="width:80%;text-align:center;">
+
+        <div style="text-align:center;">
+        <table style="width:800px;border:2pt solid black;background-color:#808080;">
+        <tr>
+            <td style="width:130px;color:white;"><div class="arial_16"><b>Environment</b></div></td>
+            <td style="width:450px;background-color:#f0f0f5;"><div class="arial_16">{{ apache_environment }}</div></td>
+        <tr>
+        <tr>
+            <td style="width:130px;color:white;"><div class="arial_16"><b>This Host</b></div></td>
+            <td style="width:450px;background-color:#f0f0f5;"><div class="arial_16">{{ name }}</div></td>
+        <tr>            
+        <tr>
+            <td style="width:130px;color:white;"><div class="arial_16"><b>Test Message</b></div></td>
+            <td style="width:450px;background-color:#f0f0f5;"><div class="arial_16">{{ apache_test_message }}</div></td>
+        <tr>
+        </table>
+        </div>
+
+        </br>
+
+        <table style="width:800px;border: 0px solid black;background-color:black;">
+        <tr>
+            <td style="text-align:center;">
+                <div>
+                    <img src="ansible-tower.png"/>
+                    </br></br>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="arial_16" style="font-style:bold;color:#ff0000;text-align:center;">
+                    Ansible is the easiest Automation you can use today</br>for your entire IT Infrastructure
+                    </br></br>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td style="width:120px;"><div style="font-weight:bold;color:gainsboro;">EASY</div></td>
+                        <td>
+                            <div style="font-weight:bold;color:darkgrey;">
+                                Ansible uses human language, not programming scripts.</br>
+                                It is very quick to learn and knowledge sharing becomes very easy</br></br>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:120px;"><div style="font-weight:bold;color:gainsboro;">POWERFUL</div></td>
+                        <td>
+                            <div style="font-weight:bold;color:darkgrey;">
+                                Ansible is shipped with thousands of modules which integrate to countless vendors out there
+                                </br></br>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:120px;"><div style="font-weight:bold;color:gainsboro;">AGENTLESS</div></td>
+                        <td>
+                            <div style="font-weight:bold;color:darkgrey;">
+                                You do not need to install any software or agents on the remote machines</br></br>
+                            </div>
+                        </td>
+                    </tr>                                        
+                </table>
+            </td>
+        </tr>        
+        </table>
+
+        </br>
+
+        <table style="width:800px;border: 0px solid black;">
+        <tr>
+            <td>
+                <div style="text-align:center;">
+                    <img style="width:500px;" src="ingram_micro.png"/></br>
+                    </br>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="color:grey;text-align:center;font-weight:bold;" class="arial_20">
+                    Ingram Micro New Zealand is delighted to provide</br> 
+                    Ansible Workshops to your company.</br>
+                    </br>
+                    Contact us now!</br>
+                    </br>
+                    <img style="width:700px;" src="ansible-workshop.png"/>
+                    </br>
+                </div>
+            </td>
+        </tr>
+        </table>
+
+        </br>
+
+        <?php
+            $db_host    = "{{ dbserver_host }}";
+            $db_user    = "ansible";
+            $db_pass    = "redhat";
+            $db_table   = "theredteam";                  
+                   
+            $db_conn    = mysqli_connect($db_host, $db_user, $db_pass, $db_table);
+            if (mysqli_connect_errno($db_conn)){
+                echo "<p>Database is not found. Please deploy DBServer</p>";
+            }
+            else {
+                echo "<table style='width:800px;border:0pt solid black;padding: 0px;'>";
+                echo "<tr>";
+                echo "<td>";
+                echo "<div class='arial_20' style='width:100%;text-align:center;font-weight:bold;color:brown;'>";
+                echo "</br>Ingram Micro NZ RED Team</br></br>";
+
+                echo "<table style='width:700px;border:1pt solid black;padding: 0px;'>";
+                echo "<tr style='background-color:lightgray;'>";
+                echo "<th style='width:150px;border:1pt solid black;'>First Name</th>";
+                echo "<th style='width:150px;border:1pt solid black;'>Surname</th>";
+                echo "<th style='width:300px;border:1pt solid black;'>Role</th>";
+                echo "</tr>";
+
+                $member = mysqli_query($db_conn, "SELECT firstname, surname, role FROM member;");
+                while ($member_row = mysqli_fetch_assoc($member)){
+                    echo "<tr>";
+                    echo "<td style='border:1pt solid black;'>" . $member_row["firstname"] . "</td>";
+                    echo "<td style='border:1pt solid black;'>" . $member_row["surname"] . "</td>";
+                    echo "<td style='border:1pt solid black;'>" . $member_row["role"] . "</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+
+                echo "</div>";
+                
+                echo "</br></br>";
+
+                echo "</td>";
+                echo "</tr>";
+                echo "</table>";
+                echo "</br></br>";
+            }
+            mysqli_close($db_conn);
+        ?>
+
+        </br>
+
+    </td>
+    <td style="width:10%;">&nbsp;</td>
+</tr>
+</table>
+
+<footer>{{ inventory_hostname }}<br />Ansible by Red Hat</footer>
+</body>
+
+</html>
