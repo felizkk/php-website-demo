@@ -9,21 +9,47 @@
 
 <table style="width:100%;text-align:center;">
 <tr>
-    <td>
-        <table>
-        <tr><td style="text-align:center;">
-            <div>
-                <img src="ansible-tower-small.png"/>
-                </br></br>
-            </div>
-        </td></tr>
-        <tr><td>
-            <div class="arial_16" style="font-style:bold;color:brown;text-align:center;">
-                Ansible is the easiest Automation you can use today</br>for your entire IT Infrastructure
-                </br></br>
-            </div>
-        </td></tr>
-        <tr><td>
+    <td style="width:10%;">&nbsp;</td>
+    <td style="width:80%;text-align:center;">
+
+        <div style="text-align:center;">
+        <table style="width:800px;border:2pt solid black;background-color:#666699;">
+        <tr>
+            <td style="width:130px;color:white;"><div class="arial_16"><b>Environment</b></div></td>
+            <td style="width:450px;background-color:#f0f0f5;"><div class="arial_16">{{ apache_environment }}</div></td>
+        <tr>
+        <tr>
+            <td style="width:130px;color:white;"><div class="arial_16"><b>This Host</b></div></td>
+            <td style="width:450px;background-color:#f0f0f5;"><div class="arial_16">{{ name }}</div></td>
+        <tr>            
+        <tr>
+            <td style="width:130px;color:white;"><div class="arial_16"><b>Test Message</b></div></td>
+            <td style="width:450px;background-color:#f0f0f5;"><div class="arial_16">{{ apache_test_message }}</div></td>
+        <tr>
+        </table>
+        </div>
+
+        </br>
+
+        <table style="width:800px;border: 0px solid black;">
+        <tr>
+            <td style="text-align:center;">
+                <div>
+                    <img src="ansible-tower-small.png"/>
+                    </br></br>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="arial_16" style="font-style:bold;color:brown;text-align:center;">
+                    Ansible is the easiest Automation you can use today</br>for your entire IT Infrastructure
+                    </br></br>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
                 <table>
                     <tr>
                         <td style="width:120px;"><b>EASY</b></td>
@@ -39,39 +65,37 @@
                         <td>You do not need to install any software or agents on the remote machines</br></br></td>
                     </tr>                                        
                 </table>
-        </td></tr>        
-        </table>
-        <table style="width:600px;border:2pt solid black;background-color:beige;">
-        <tr>
-            <td style="width:200px;"><div class="arial_16"><b>Environment</b></div></td>
-            <td style="width:400px;"><div class="arial_16">{{ apache_environment }}</div></td>
-        <tr>
-        <tr>
-            <td style="width:200px;"><div class="arial_16"><b>This Host</b></div></td>
-            <td style="width:400px;"><div class="arial_16">{{ name }}</div></td>
-        <tr>            
-        <tr>
-            <td style="width:200px;"><div class="arial_16"><b>Test Message</b></div></td>
-            <td style="width:400px;"><div class="arial_16">{{ apache_test_message }}</div></td>
-        <tr>
+            </td>
+        </tr>        
         </table>
 
-        </br></br>
+        </br>
 
-        <table>
-        <tr><td>
-            <img style="width:300px;" src="ingram_micro.png"/>
-        </td></tr>
-        <tr><td>
-            <div style="color:grey;" class="arial_20">
-                Ingram Micro New Zealand is delighted to provide</br>
-                Ansible Workshops to your company.</br>
-                <b>Contact us now!</b></br>
-                <img style="width:100%;" src="ansible-workshop.png"/>
-                </br></br>
-            </div>
-        </td></tr>
+        <table style="width:800px;border: 0px solid black;">
+        <tr>
+            <td>
+                <div style="text-align:center;">
+                    <img style="width:500px;" src="ingram_micro.png"/></br>
+                    </br>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="color:grey;text-align:center;font-weight:bold;" class="arial_20">
+                    Ingram Micro New Zealand is delighted to provide</br> 
+                    Ansible Workshops to your company.</br>
+                    </br>
+                    Contact us now!</br>
+                    </br>
+                    <img style="width:700px;" src="ansible-workshop.png"/>
+                    </br>
+                </div>
+            </td>
+        </tr>
         </table>
+
+        </br>
 
         <?php
             $db_host    = "{{ dbserver_host }}";
@@ -84,7 +108,13 @@
                 echo "<p>Database is not found. Please deploy DBServer</p>";
             }
             else {
-                echo "<table style='border:1pt solid black;padding: 0px;'>";
+                echo "<table style='width:800px;border:0pt solid black;padding: 0px;'>";
+                echo "<tr>";
+                echo "<td>";
+                echo "<div class='arial_20' style='width:100%;text-align:center;font-weight:bold;color:brown;'>";
+                echo "</br>Ingram Micro NZ RED Team</br></br>";
+
+                echo "<table style='width:700px;border:1pt solid black;padding: 0px;'>";
                 echo "<tr style='background-color:lightgray;'>";
                 echo "<th style='width:150px;border:1pt solid black;'>First Name</th>";
                 echo "<th style='width:150px;border:1pt solid black;'>Surname</th>";
@@ -100,10 +130,23 @@
                     echo "</tr>";
                 }
                 echo "</table>";
+
+                echo "</div>";
+                
+                echo "</br></br>";
+
+                echo "</td>";
+                echo "</tr>";
+                echo "</table>";
+                echo "</br></br>";
             }
             mysqli_close($db_conn);
         ?>
+
+        </br>
+
     </td>
+    <td style="width:10%;">&nbsp;</td>
 </tr>
 </table>
 
