@@ -22,7 +22,9 @@ footer {
     width: 100%;
     bottom: 0;
     position: fixed;
-    font-size: 75%;
+    font-size: 12pt;
+    font-family:arial;
+    color: white;
 }
 
 img {
